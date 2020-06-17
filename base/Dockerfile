@@ -1,13 +1,14 @@
 # This is a Dockerfile of "centos7_base"
 FROM centos:centos7
-MAINTAINER Akihide Ito akkytech0617@gmail.com
+LABEL maintainer="akkytech0617@gmail.com"
 # update os
 RUN yum -y update 
 # install deltarpm
 RUN yum -y install deltarpm 
+# install IUS repository
+RUN yum -y install https://repo.ius.io/ius-release-el7.rpm
 # install git2.24
-RUN yum -y install https://repo.ius.io/ius-release-el7.rpm https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-    yum -y install git224 
+RUN yum -y install git224
 # setup config of git
 RUN git config --global user.name "Akihide Ito" \
     git config --global user.email "akkytech0617@gmail.com" \
