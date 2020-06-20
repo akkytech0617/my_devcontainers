@@ -15,4 +15,3 @@ RUN yum -y install https://repo.ius.io/ius-release-el7.rpm \
 # && git config --global core.ignorecase false \
 # && git config --global core.quotepath false \
 # && git config --global color.ui true
-#
