@@ -5,7 +5,7 @@ LABEL maintainer="akkytech0617@gmail.com"
 ARG DOCKER_UID=1000
 ARG DOCKER_USER=vscode
 ARG DOCKER_PASSWORD=vscode
-RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
+RUN useradd -m --uid ${DOCKER_UID} --groups wheel ${DOCKER_USER} \
   && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd
 # install vue.js vue-cli
 RUN npm install -g @vue/cli @vue/cli-init
