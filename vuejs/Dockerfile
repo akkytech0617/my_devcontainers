@@ -11,5 +11,7 @@ RUN useradd -m --uid ${DOCKER_UID} --groups wheel ${DOCKER_USER} \
 RUN npm install -g @vue/cli @vue/cli-init
 # change local user
 USER vscode
+RUN mkdir /home/vscode/.devcontainer
 # copy config file of dev-container
-COPY ./.devcontainer /home/vscode/
+COPY ./.devcontainer /home/vscode/.devcontainer
+COPY Dockerfile /home/vscode/
