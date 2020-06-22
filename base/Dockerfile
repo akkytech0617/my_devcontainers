@@ -3,8 +3,9 @@ FROM centos:centos7
 LABEL maintainer="akkytech0617@gmail.com"
 # update os
 RUN yum -y update 
-# install deltarpm
-RUN yum -y install deltarpm 
+# install deltarpm, yum
+RUN yum -y install deltarpm \
+    sudo
 # install git2.24
 RUN yum -y install https://repo.ius.io/ius-release-el7.rpm \
  && yum -y install git224
